@@ -1,0 +1,5 @@
+daemonize yes
+sentinel monitor redis 192.168.56.201 6379 2
+sentinel down-after-milliseconds redis 60000
+sentinel failover-timeout redis 180000
+sentinel parallel-syncs redis 1
