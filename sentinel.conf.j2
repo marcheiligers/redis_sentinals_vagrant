@@ -1,5 +1,6 @@
 daemonize yes
+logfile /var/log/redis/redis.log
 sentinel monitor redis 192.168.56.201 6379 2
-sentinel down-after-milliseconds redis 60000
-sentinel failover-timeout redis 180000
+sentinel down-after-milliseconds redis 10000
+sentinel failover-timeout redis 30000
 sentinel parallel-syncs redis 1

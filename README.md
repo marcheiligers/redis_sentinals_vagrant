@@ -4,5 +4,11 @@
 
 ``` bash
 $ vagrant up
-$ ansible-playbook -i hosts all setup.yml -k
+$ ansible-playbook -i hosts setup.yml -k
 ```
+
+See also [Redis Sentinels](http://redis.io/topics/sentinel)
+
+## Issues
+
+If you destroy the machines and then provision new ones, you will need to delete the destroyed machines from your known_hosts file.

@@ -35,6 +35,9 @@
   - name: copy the redis executables to each node
     copy: src=./redis/ dest=/opt/redis/ mode=0755 force=no
 
+  - name: ensure the folder /var/log/redis exists
+    file: path=/var/log/redis state=directory
+
 - hosts: redis-servers[0-2]
   sudo: yes
   tasks:
