@@ -1,0 +1,11 @@
+- hosts: redis-servers[0-2]
+  sudo: yes
+  tasks:
+  - name: start redis
+    command: /opt/redis/redis-server /opt/redis/redis.conf
+- hosts: redis-servers[2-5]
+  sudo: yes
+  tasks:
+  - name: start sentinels
+    command: /opt/redis/redis-sentinel /opt/redis/sentinel.conf
+
